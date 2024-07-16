@@ -1,0 +1,99 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@500;700;900&display=swap");
+@import 'library';
+
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: $font-roboto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: var(--base-01);
+}
+
+.container {
+    max-width: 1240px;
+    width: 100%;
+    gap: 0px;
+    border-radius: 0px 0px 13px 13px;
+    border: solid 1px var(--base-04);
+    overflow-x: hidden;
+}
+
+.header {
+    display: flex;
+    align-items: end;
+    width: 100%;
+    max-width: 1240px;
+    height: 200px;
+    padding: 20px;
+    background-image: url("../images/header.png");
+    background-size: cover;
+    border: solid 1px var(--base-04);
+    border-radius: 0px 0px 13px 13px;
+    &__title {
+        @include headingH1();
+        color: var(--base-01);
+        width: 1076px;
+        text-wrap: nowrap;
+      }
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    width: 100%;
+    padding: 24px 17px 37px 15px;
+    &__paragraph {
+        @include bodyM();
+        &-bold {
+            @include bodyMBold();
+        }
+    }
+    &__subtitle-h4 {
+        @include headingH4();
+    }
+    &__subtitle-h5 {
+        @include headingH5();
+    }
+    &__subtitle-h6 {
+        @include headingH6();
+    }
+    &__list {
+        list-style: none;
+        &-item {
+            @include bodyM();
+            margin-bottom: 10px;
+        }
+    }
+    &__button-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+    &__button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 200px;
+        height: 40px;
+        @include bodyM();
+        color: var(--base-01);
+        background-color: var(--primary);
+        border-radius: 5px;
+        &:hover {
+            background-color: var(--primary-hover);
+        }
+        &:active {
+            background-color: var(--primary-active);
+        }
+      }
+}

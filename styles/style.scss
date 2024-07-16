@@ -1,17 +1,60 @@
-@import 'resetStyles';
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500;700;900&display=swap');
+@import 'library';
 
-// Основные стили для body
-body {
-  font-family: 'Roboto';
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  min-height: 100vh;
-  background-color: #fff;
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
 }
 
-// Стили для контейнера карточек
+body {
+  font-family: $font-roboto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  min-height: 100vh;
+  background-color: var(--base-01);
+}
+
+.header {
+  width: 100%;
+  background-color: var(--base-02);
+  border-bottom: solid 1px var(--base-04);
+}
+
+.toolbar {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+
+  &--spaced {
+    margin: 35px 0px 10px;
+  }
+
+  button {
+    padding: 10px 20px;
+    @include bodyM();
+    cursor: pointer;
+    background-color: var(--primary);
+    color: var(--base-01);
+    border: 1px solid var(--primary);
+    border-radius: 8px;
+    transition: background-color 0.3s, border-color 0.3s;
+
+    &:hover {
+      background-color: var(--primary-hover);
+      border-color: var(--primary-hover);
+    }
+
+    &:active {
+      background-color: var(--primary-active);
+      border-color: var(--primary-active);
+    }
+  }
+}
+
 .card-container {
   display: flex;
   flex-wrap: wrap;
@@ -21,118 +64,107 @@ body {
   margin: 25px;
 }
 
-// Стили для карточек
 .card {
   width: 292px;
   height: 400px;
-  background-color: #f6f6f6;
-  border: solid 1px #e0e0e0;
+  background-color: var(--base-02);
+  border: solid 1px var(--base-04);
   border-radius: 12px;
   position: relative;
-
+  
   &:hover {
-    box-shadow: 4px 4px 8px 0px rgba(0, 0, 0, 0.2);
-  }
-}
-
-// Стили для изображения карточки
-.card__image {
-  width: 292px;
-  height: 180px;
-  border-radius: 12px 12px 0 0;
-  border: solid 1px #e0e0e0;
-  margin-bottom: 22px;
-  display: block;
-  object-fit: cover;
-  position: relative;
-  top: -1px;
-  left: -1px;
-}
-
-// Стили для содержимого карточки
-.card__content {
-  margin: 22px 16px 28px;
-}
-
-.card__content-title {
-  font-size: 19px;
-  line-height: 28px;
-  font-weight: 800;
-  margin-bottom: 20px;
-  color: #303345;
-}
-
-.card__content-description {
-  font-size: 16px;
-  line-height: 24px;
-  font-weight: 500;
-  color: #6b6d80;
-  max-height: 64px;
-}
-
-// Стили для кнопок внутри карточки
-.card__buttons {
-  margin: 16px;
-  display: flex;
-}
-
-.card__button-detailed {
-  font-size: 16px;
-  line-height: 24px;
-  font-weight: 500;
-  width: 116px;
-  height: 40px;
-  background-color: #526ed3;
-  border-radius: 8px;
-  border: 0;
-  color: #ffffff;
-  margin-right: 14px;
-  cursor: pointer;
-
-  &:hover {
-    background-color: #6c86e2;
+    box-shadow: 4px 4px 8px 0px #00000033;
   }
 
-  &:active {
-    background-color: #314692;
-  }
-}
-
-.card__button-bookmark {
-  font-size: 16px;
-  line-height: 24px;
-  font-weight: 500;
-  width: 120px;
-  height: 40px;
-  color: #526ed3;
-  background-color: transparent;
-  border: 1px solid #526ed3;
-  border-radius: 8px;
-  cursor: pointer;
-
-  &:hover {
-    border-color: #6c86e2;
-    color: #6c86e2;
+  &__image {
+    width: 292px;
+    height: 180px;
+    border-radius: 12px;
+    border: solid 1px var(--base-04);
+    margin-bottom: 22px;
+    display: block;
+    object-fit: cover;
+    position: relative;
+    top: -1px;
+    left: -1px;
   }
 
-  &:active {
-    border-color: #314692;
-    color: #314692;
+  &__content {
+    margin: 22px 16px 28px;
+
+    &-title {
+      @include bodyXLBold();
+      margin-bottom: 20px;
+      color: var(--text-01);
+    }
+
+    &-description {
+      @include bodyM();
+      color: var(--text-02);
+      max-height: 64px;
+    }
   }
-}
 
-.card__button-bookmark_added {
-  border: 0;
-  background-color: #ff7043;
-  color: #ffffff;
-
-  &:hover {
-    background-color: #fc8663;
-    color: #ffffff;
+  &__buttons {
+    margin: 16px;
+    display: flex;
   }
 
-  &:active {
-    background-color: #ed5a2b;
-    color: #ffffff;
+  &__button-detailed {
+    @include bodyM();
+    width: 116px;
+    height: 40px;
+    background-color: var(--primary);
+    border-radius: 8px;
+    border: 0;
+    color: var(--base-01);
+    margin-right: 14px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: var(--primary-hover);
+    }
+
+    &:active {
+      background-color: var(--primary-active);
+    }
+  }
+
+  &__button-bookmark {
+    @include bodyM();
+    width: 120px;
+    height: 40px;
+    color: var(--primary);
+    background-color: transparent;
+    border: 1px solid var(--primary);
+    border-radius: 8px;
+    cursor: pointer;
+
+    &:hover {
+      border-color: var(--primary-hover);
+      color: var(--primary-hover);
+    }
+
+    &:active {
+      border-color: var(--primary-active);
+      color: var(--primary-active);
+    }
+  }
+  &__button-bookmark_added {
+    background-color: var(--accent);
+    border: 1px solid var(--accent);
+    color: var(--base-01);
+
+    &:hover {
+      background-color: var(--accent-hover);
+      border: 1px solid var(--accent-hover);
+      color: var(--base-01);
+    }
+
+    &:active {
+      background-color: var(--accent-active);
+      border: 1px solid var(--accent-active);
+      color: var(--base-01);
+    }
   }
 }

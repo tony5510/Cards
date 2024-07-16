@@ -1,0 +1,18 @@
+{
+  "name": "cards_layout",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "compile-scss": "sass styles/style.scss styles/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://psb-tech.ru/frontend-school-students/mitrofanov-pavel/cards_layout"
+  },
+  "author": "Mitrofanov Pavel",
+  "license": "ISC",
+  "dependencies": {
+    "sass": "^1.49.8"
+  }
+}

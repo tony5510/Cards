@@ -1,0 +1,77 @@
+:root {
+    --base-01: #FFFFFF;
+    --base-02: #F6F6F6;
+    --base-04: #E0E0E0;
+    --primary: #526ED3;
+    --primary-hover: #6C86E2;
+    --primary-active: #314692;
+    --accent: #FF7043;
+    --accent-hover: #FF8D69;
+    --accent-active: #ED5A2B;
+    --text-01: #303345;
+    --text-02: #6B6D80;
+}
+
+$font-roboto: 'Roboto', sans-serif;
+
+@mixin bodyM() {
+    font-family: $font-roboto;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+@mixin bodyMBold() {
+    font-family: $font-roboto;
+    font-weight: 800;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+@mixin bodyXLBold() {
+    font-family: $font-roboto;
+    font-size: 19px;
+    font-weight: 800;
+    line-height: 28px;
+}
+
+@mixin headingH1() {
+    font-family: $font-roboto;
+    font-size: 50px;
+    font-weight: 900;
+    line-height: 56px;
+    text-align: left;
+}
+
+@mixin headingH3() {
+    font-family: $font-roboto;
+    font-size: 36px;
+    font-weight: 800;
+    line-height: 40px;
+    text-align: left;
+}
+
+@mixin headingH4() {
+    font-family: $font-roboto;
+    font-size: 28px;
+    font-weight: 800;
+    line-height: 32px;
+    text-align: left;
+}
+
+@mixin headingH5() {
+    font-family: $font-roboto;
+    font-size: 24px;
+    font-weight: 800;
+    line-height: 28px;
+    text-align: left;
+}
+
+@mixin headingH6() {
+    font-family: $font-roboto;
+    font-size: 20px;
+    font-weight: 800;
+    line-height: 24px;
+    text-align: left;
+}
+
